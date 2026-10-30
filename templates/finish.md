@@ -1,6 +1,7 @@
 # Finish check
 
 - [ ] Every required README item is represented in SPEC and verification coverage.
+- [ ] If a fresh review session was available, its confirmed findings were handled; otherwise the review is labeled same-context.
 - [ ] Required checks have current observed results; failures and missing evidence are visible.
 - [ ] The documented startup path matches the actual project.
 - [ ] Required output files and paths match the task instructions.

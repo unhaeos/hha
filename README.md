@@ -34,7 +34,9 @@ project/
 
 설치 스크립트는 같은 파일로 재실행할 수 있고, 다른 내용이 이미 있으면 덮어쓰지 않고 중단합니다. 업데이트 때 충돌하면 기존 사용자 변경을 먼저 확인하세요. Git 저장소나 커밋은 설치·구현·검증의 필수조건이 아닙니다.
 
-프로젝트 폴더에서 Codex를 시작해 `/skills` 또는 `$` 목록에 `hha-plan`, `hha-create-verification`, `hha-debug`, `hha-ui`, `hha-writing`이 보이는지 확인합니다. 목록이 갱신되지 않으면 Codex를 재시작합니다. 제공 환경에서 다른 경로를 사용한다면 확인된 경로를 선택하세요.
+로컬 Git이 가능하면 구현 전에 `git status --short --branch`와 `git log -1 --oneline`을 확인합니다. 초기 커밋이 없다면 원본 과제 파일을 검토해 명시적인 경로만 stage하고 로컬 baseline commit을 만드세요. `git add .`로 `hha/`, 설치 파일, 로컬 환경 파일이나 비밀 값을 함께 넣지 않습니다. 이후 작동하는 작은 단위마다 로컬 커밋을 남기되 push하지 않습니다. 한 checkout에서는 한 세션만 파일을 수정하고, 두 번째 세션은 안정된 커밋을 읽기 전용으로 검토합니다.
+
+프로젝트 폴더에서 Codex를 시작해 `/skills` 또는 `$` 목록에 `hha-plan`, `hha-create-verification`, `hha-debug`, `hha-review`, `hha-ui`, `hha-writing`이 보이는지 확인합니다. 목록이 갱신되지 않으면 Codex를 재시작합니다. 제공 환경에서 다른 경로를 사용한다면 확인된 경로를 선택하세요.
 
 그다음 요청하세요.
 
@@ -45,6 +47,7 @@ AGENTS.md를 따르고 hha-plan으로 시작해줘.
 README와 SPEC을 기준으로 프로젝트 전용 검증 스킬도 만들어줘.
 코드가 없으면 검증 초안부터 만들고 최소 구현 후 실행 절차를 확정해.
 이어서 구현하고 검증해줘. 화면이 필요하면 hha-ui를 함께 적용해.
+추가 세션이나 서브에이전트를 쓸 수 있으면 한 명만 파일을 수정하고, 나머지는 안정된 로컬 커밋을 hha-review로 읽기 전용 검토해.
 외부 전송, push, PR, 자동 제출, 전역 설정 변경은 하지 마.
 ```
 
@@ -58,6 +61,7 @@ README와 SPEC을 기준으로 프로젝트 전용 검증 스킬도 만들어줘
 | [hha-plan](skills/hha-plan/SKILL.md) | 필요한 인터뷰와 체크리스트형 SPEC |
 | [hha-create-verification](skills/hha-create-verification/SKILL.md) | 요구사항별 검증 스킬 생성 및 갱신 |
 | [hha-debug](skills/hha-debug/SKILL.md) | 재현, 원인, 수정, 재검증 |
+| [hha-review](skills/hha-review/SKILL.md) | 새 컨텍스트의 읽기 전용 요구사항·코드 리뷰 |
 | [hha-ui](skills/hha-ui/SKILL.md) | 읽기 쉬운 화면, 구체적인 문구, 절제된 시각 구조 |
 | [hha-writing](skills/hha-writing/SKILL.md) | 버튼 한 줄부터 문서까지 구체적인 문구와 설명 |
 | [검증 기록](docs/validation.md) | 이 저장소에서 실제 확인한 범위와 한계 |

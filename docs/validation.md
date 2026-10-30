@@ -29,8 +29,9 @@ The skill-creator `quick_validate.py` validator passed for all four shipped skil
 installation in a folder without Git preserves existing AGENTS.md and resolves
 skill resources; identical reinstall writes no files; conflicting content is
 preserved with no installation writes; the optional `.codex/skills` layout is
-created instead of `.agents/skills`. All five current skills passed the
-skill-creator format validator. These checks validate installed files, not live
+created instead of `.agents/skills`. All six current skills passed the
+skill-creator format validator. The current suite is rerun whenever the skill
+set changes. These checks validate installed files, not live
 Codex skill discovery in a managed environment.
 
 ## Remaining verification gaps

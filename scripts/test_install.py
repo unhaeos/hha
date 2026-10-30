@@ -20,7 +20,7 @@ class InstallationTests(unittest.TestCase):
             agent_text = (project / 'AGENTS.md').read_text(encoding='utf-8')
             self.assertTrue(agent_text.startswith('Existing project instructions.\n'))
             entries = list((project / '.agents/skills').glob('*/SKILL.md'))
-            self.assertEqual(len(entries), 5)
+            self.assertEqual(len(entries), 6)
             for entry in entries:
                 for link in re.findall(r'\]\(([^)]+)\)', entry.read_text(encoding='utf-8')):
                     if not re.match(r'^[a-zA-Z]+://|^#', link):
@@ -44,7 +44,7 @@ class InstallationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             project = Path(directory)
             installer.install(project, 'codex')
-            self.assertEqual(len(list((project / '.codex/skills').glob('*/SKILL.md'))), 5)
+            self.assertEqual(len(list((project / '.codex/skills').glob('*/SKILL.md'))), 6)
             self.assertFalse((project / '.agents').exists())
 
 
