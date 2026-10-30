@@ -5,7 +5,7 @@ description: Generate or refresh a project-specific verification skill from the 
 
 # Create project verification
 
-Read [working guidance](../../guidance.md) if not loaded. Adapted from pstack; see [attribution](../../THIRD_PARTY.md). This version adds requirements coverage and a draft stage, and removes mandatory UI automation, parallel agents and shipping steps.
+Read [working guidance](../../AGENTS.md) if not loaded. Adapted from pstack; see [attribution](../../THIRD_PARTY.md). This version adds requirements coverage and a draft stage, and removes mandatory UI automation, parallel agents and shipping steps.
 
 ## Establish coverage first
 

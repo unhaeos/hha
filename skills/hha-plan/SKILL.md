@@ -5,7 +5,7 @@ description: Turn a project README or task brief into a checklist specification 
 
 # Plan from requirements
 
-Read [working guidance](../../guidance.md) if not already loaded. Determine the target project and permitted output path. Default to `hha-work/SPEC.md` in that project, using [this template](../../templates/SPEC.md). Preserve an existing plan's IDs and decisions.
+Read [working guidance](../../AGENTS.md) if not already loaded. Determine the target project and permitted output path. Default to `hha-work/SPEC.md` in that project, using [this template](../../templates/SPEC.md). Preserve an existing plan's IDs and decisions.
 
 ## Read before interviewing
 

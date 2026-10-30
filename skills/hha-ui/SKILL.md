@@ -6,7 +6,7 @@ license: Apache-2.0; see LICENSE.txt
 
 # UI that is easy to read and use
 
-Read [working guidance](../../guidance.md) if not loaded. Modified adaptation of selected frontend-design ideas, with hha-specific typography, Korean copy and environment rules. See [attribution](../../THIRD_PARTY.md) and [license](LICENSE.txt).
+Read [working guidance](../../AGENTS.md) if not loaded. Modified adaptation of selected frontend-design ideas, with hha-specific typography, Korean copy and environment rules. See [attribution](../../THIRD_PARTY.md) and [license](LICENSE.txt).
 
 ## Start with the user's task
 
@@ -27,6 +27,8 @@ Choose one useful visual emphasis that suits the product. Do not add gradients, 
 - Keep label, value and action alignment consistent. Respect zoom, focus visibility and reduced-motion settings. Prevent narrow-screen horizontal overflow and truncation of essential actions.
 
 ## Product copy
+
+Read [hha-writing](../hha-writing/SKILL.md) for labels, notifications and other copy, even when writing is only a small part of a UI task.
 
 Say what exists, what changed and what the user can do. Prefer specific nouns and verbs. Examples: `상품 6개를 선택했어요`, `상품 바꾸기`, `저장하지 못했어요. 다시 시도해 주세요.`
 

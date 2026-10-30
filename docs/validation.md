@@ -23,10 +23,22 @@ The skill-creator `quick_validate.py` validator passed for all four shipped skil
 
 ## Not yet verified
 
+## Project installation checks — 2026-10-30
+
+`python -m unittest discover -s scripts -p test_install.py` passed three tests:
+installation in a folder without Git preserves existing AGENTS.md and resolves
+skill resources; identical reinstall writes no files; conflicting content is
+preserved with no installation writes; the optional `.codex/skills` layout is
+created instead of `.agents/skills`. All five current skills passed the
+skill-creator format validator. These checks validate installed files, not live
+Codex skill discovery in a managed environment.
+
+## Remaining verification gaps
+
 - How another agent follows these instructions without author context.
 - Availability of git, runtime tools, network access or writable paths in a particular managed environment.
 - Actual rendering, responsive layout and font quality of generated UI.
 - Real external-service integrations or complex state transitions.
 - A full task completed under a time limit.
 
-Use the [15-minute walkthrough](try-15-minutes.md) to test the available environment. An unavailable tool is a recorded constraint, not permission to change environment settings.
+Check available tools in the actual target environment. An unavailable tool is a recorded constraint, not permission to change environment settings.

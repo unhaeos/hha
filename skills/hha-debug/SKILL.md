@@ -5,7 +5,7 @@ description: Diagnose a failed project check or broken behavior through reproduc
 
 # Debug a failed check
 
-Read [working guidance](../../guidance.md) if not loaded. Locate the failing SPEC criterion and verifier procedure, if present.
+Read [working guidance](../../AGENTS.md) if not loaded. Locate the failing SPEC criterion and verifier procedure, if present.
 
 1. Capture the exact input, expected result, actual result and execution context. Reproduce on the intended code and instance. If reproduction is unavailable, say why and keep the conclusion tentative.
 2. Separate product failure from a wrong test expectation, stale command, missing fixture or environment restriction. Check the evidence path before making unrelated product changes.

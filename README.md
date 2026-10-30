@@ -2,7 +2,7 @@
 
 Lightweight skills for planning, building, and verifying.
 
-README를 읽고, 필요한 질문을 함께 정리하고, 체크리스트형 SPEC을 만든 뒤 실제 결과로 검증합니다. 코드가 없는 프로젝트에서도 시작할 수 있습니다. 단일 에이전트 세션과 일반 파일 읽기만으로 사용하며 별도 설치, API 키, 플러그인, 전역 설정 변경이 필요하지 않습니다.
+README를 읽고, 필요한 질문을 함께 정리하고, 체크리스트형 SPEC을 만든 뒤 실제 결과로 검증합니다. 코드가 없는 프로젝트에서도 시작할 수 있습니다. 프로젝트의 AGENTS.md와 자동 인식 스킬로 사용하며 API 키, 플러그인, 전역 설정 변경이 필요하지 않습니다.
 
 ## 바로 시작
 
@@ -14,10 +14,32 @@ git clone --depth 1 https://github.com/unhaeos/hha.git hha
 
 작업 공간 바깥에도 쓸 수 있다면 프로젝트 옆에 별도로 clone해도 됩니다. 그 경우 아래 요청의 `hha/`를 실제 경로로 바꿉니다. 기존 폴더는 덮어쓰지 않습니다.
 
-프로젝트 폴더에서 제공된 에이전트를 실행하고 다음을 요청하세요.
+프로젝트 폴더에서 설치합니다. Python 3.9 이상이 필요하며 패키지 설치는 없습니다.
+
+```sh
+python3 hha/scripts/install.py .
+```
+
+Windows 등에서 명령 이름이 `python`이면 `python hha/scripts/install.py .`를 사용합니다. 기본 설치 위치는 현재 공식 문서의 `.agents/skills/`입니다. `.codex/skills/`를 읽는 환경에서는 **대신** `python3 hha/scripts/install.py . --layout codex`를 사용하세요. 두 위치에 중복 설치할 필요는 없습니다. [공식 스킬 경로 안내](https://learn.chatgpt.com/docs/build-skills)
 
 ```text
-hha/guidance.md를 읽고 이 프로젝트에 적용해줘.
+project/
+  AGENTS.md                 # 기존 지침을 보존하고 hha 참조만 추가
+  .agents/skills/hha-*/      # Codex가 발견하는 스킬 (codex 옵션은 .codex/skills)
+  .hha/                     # 지침과 스킬이 참조하는 리소스
+  hha/                      # 다운로드한 원본
+  hha-work/                 # 작업하면서 생성되는 SPEC과 검증 기록
+  ...                       # 실제 프로젝트 소스
+```
+
+설치 스크립트는 같은 파일로 재실행할 수 있고, 다른 내용이 이미 있으면 덮어쓰지 않고 중단합니다. 업데이트 때 충돌하면 기존 사용자 변경을 먼저 확인하세요. Git 저장소나 커밋은 설치·구현·검증의 필수조건이 아닙니다.
+
+프로젝트 폴더에서 Codex를 시작해 `/skills` 또는 `$` 목록에 `hha-plan`, `hha-create-verification`, `hha-debug`, `hha-ui`, `hha-writing`이 보이는지 확인합니다. 목록이 갱신되지 않으면 Codex를 재시작합니다. 제공 환경에서 다른 경로를 사용한다면 확인된 경로를 선택하세요.
+
+그다음 요청하세요.
+
+```text
+AGENTS.md를 따르고 hha-plan으로 시작해줘.
 프로젝트의 README와 기존 코드부터 확인하고, hha 자체는 작업 대상에서 제외해.
 중요한 결정만 짧게 인터뷰한 뒤 체크리스트형 SPEC을 만들어줘.
 README와 SPEC을 기준으로 프로젝트 전용 검증 스킬도 만들어줘.
@@ -26,23 +48,23 @@ README와 SPEC을 기준으로 프로젝트 전용 검증 스킬도 만들어줘
 외부 전송, push, PR, 자동 제출, 전역 설정 변경은 하지 마.
 ```
 
-계획까지만 원하면 마지막에 `이번에는 계획과 검증 초안까지만 작성해줘`라고 덧붙입니다. 자동 스킬 검색이나 슬래시 명령 지원은 가정하지 않습니다. 파일을 직접 읽히는 경로가 기본입니다.
+계획까지만 원하면 마지막에 `이번에는 계획과 검증 초안까지만 작성해줘`라고 덧붙입니다. Python이 없거나 프로젝트 스킬 등록이 지원되지 않으면 설치 대신 `hha/AGENTS.md를 읽고 적용해줘`라고 요청할 수 있습니다. 설치는 스킬 발견을 돕는 것이며 도구 권한이나 실행 능력을 추가하지 않습니다.
 
 ## 구성
 
 | 파일 | 역할 |
 |---|---|
-| [guidance.md](guidance.md) | 작업 시작, 단계 전환, 제한된 환경의 기본 규칙 |
+| [AGENTS.md](AGENTS.md) | 작업 시작, 단계 전환, 제한된 환경의 기본 규칙 |
 | [hha-plan](skills/hha-plan/SKILL.md) | 필요한 인터뷰와 체크리스트형 SPEC |
 | [hha-create-verification](skills/hha-create-verification/SKILL.md) | 요구사항별 검증 스킬 생성 및 갱신 |
 | [hha-debug](skills/hha-debug/SKILL.md) | 재현, 원인, 수정, 재검증 |
 | [hha-ui](skills/hha-ui/SKILL.md) | 읽기 쉬운 화면, 구체적인 문구, 절제된 시각 구조 |
-| [15분 체험](docs/try-15-minutes.md) | 환경 확인과 작은 작업 하나로 사용법 확인 |
+| [hha-writing](skills/hha-writing/SKILL.md) | 버튼 한 줄부터 문서까지 구체적인 문구와 설명 |
 | [검증 기록](docs/validation.md) | 이 저장소에서 실제 확인한 범위와 한계 |
 
 기본 산출물은 **프로젝트 쪽** `hha-work/SPEC.md`, `hha-work/verification/SKILL.md`, `hha-work/verification/features.md`, `hha-work/evidence/`입니다. `hha-work`가 이미 있다면 먼저 읽고 이어 쓰거나 별도 경로를 정합니다. 공식 제출 파일명은 과제 안내가 우선하며 이 파일들을 무조건 제출하지 않습니다.
 
-다음 세션에서는 `hha/guidance.md와 hha-work/SPEC.md, hha-work/verification/SKILL.md를 읽고 남은 작업부터 이어가줘`라고 요청합니다. 과거 검증 후 관련 코드나 조건이 바뀌었다면 다시 확인합니다.
+다음 세션에서는 `AGENTS.md와 hha-work/SPEC.md, hha-work/verification/SKILL.md를 읽고 남은 작업부터 이어가줘`라고 요청합니다. 과거 검증 후 관련 코드나 조건이 바뀌었다면 다시 확인합니다.
 
 ## 제한된 작업 환경
 
@@ -52,7 +74,7 @@ README와 SPEC을 기준으로 프로젝트 전용 검증 스킬도 만들어줘
 
 ## 제거
 
-설치 과정이 없으므로 다음 요청부터 지침을 읽히지 않으면 됩니다. 다운로드한 `hha/`는 필요 없을 때 제거할 수 있습니다. 프로젝트의 `hha-work/`에는 계획과 증거가 있으므로 다운로드 폴더와 혼동하지 마세요. 기존 README, AGENTS.md, 전역 스킬 디렉터리, Git hooks는 수정하지 않습니다.
+프로젝트 AGENTS.md에서 `hha:start`부터 `hha:end`까지의 블록만 제거하고, 설치한 경로의 `hha-*` 스킬 폴더와 `.hha/`를 제거합니다. 다른 스킬이나 기존 지침은 보존하세요. 다운로드한 `hha/`도 필요 없으면 제거할 수 있습니다. `hha-work/`에는 계획과 증거가 있으므로 별도로 보존 여부를 결정하세요. 전역 스킬 디렉터리, Git hooks, 모델 설정은 수정하지 않습니다.
 
 ## 출처
 
