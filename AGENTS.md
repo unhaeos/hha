@@ -7,6 +7,7 @@ Paths in this file are relative to this harness directory; project output paths 
 - Follow the target's instructions and environment rules first. Preserve existing files and user changes. Installation may append a small reference to the project's AGENTS.md; never replace existing project instructions.
 - Do not install other agents, update the agent or configure models. Additional sessions require confirmed environment support and permission. Git and commits improve checkpoints but are not prerequisites for file-based implementation or verification.
 - Keep project data, generated skills and evidence in the permitted workspace. No push, PR, merge, external telemetry, personal credentials, or automated submission. Public dependency downloads must still follow the environment's rules.
+- Do not add an MCP server by default. After reading the task, prefer provided files, APIs and terminal tools. Propose MCP only when a required capability is otherwise missing; identify why it is needed, what project data leaves the workspace, authentication, configuration changes and a no-MCP fallback. Do not connect it while permission or data handling is unclear.
 - Do not use browser/computer automation, screenshots, external services or additional AI sessions unless the environment explicitly permits that capability. An unavailable proof stays unverified; HTTP or source checks do not establish visual correctness.
 - Stop when AI assistance is no longer permitted. These instructions concern implementation work only.
 

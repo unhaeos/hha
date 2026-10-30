@@ -29,6 +29,8 @@ Choose a short implementation order that reaches a working end-to-end path early
 
 Name the required path that should remain complete if optional work is cut. Distinguish agent sessions used to build the app from any runtime AI integration requested by the app: runtime SDKs and services must be explicitly permitted and available, not inferred from another project's example. Label fixture, fallback and real external results separately. Do not drop a mandatory requirement because an anecdote describes a successful project that omitted it.
 
+Treat MCP as an integration decision, not a default setup step. First test whether supplied files, APIs and terminal tools cover the requirement. If MCP would materially fill a missing capability, record its purpose, outbound data, authentication, configuration change, failure behavior and manual fallback, then confirm it is permitted before connecting. A visible JSON configuration option does not establish permission.
+
 For UI work, read [hha-ui](../hha-ui/SKILL.md) and add the main user flow, screen states and compact visual system to this same document. Keep a planned feature distinct from an already implemented feature.
 
 Finish with a self-check: every required README item has an ID; each ID has a testable end state; dependencies are ordered; optional work cannot block the required path; unknowns and required deliverables are visible. This is a same-session check, not an independent review.
