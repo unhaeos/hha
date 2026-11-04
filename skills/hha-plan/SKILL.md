@@ -11,6 +11,8 @@ Read [working guidance](../../AGENTS.md) if not already loaded. Determine the ta
 
 Read the task README, local instructions, supplied data and existing entry points, tests and run scripts. Exclude the downloaded harness from project discovery. Do not assume a framework, package manager or pre-existing app. If instructions conflict, record the conflict and follow the controlling instruction.
 
+Record runtime and data facts that affect implementation: intended data source and location, relevant schema or sample shape, environment-variable names without secret values, startup order, ports, readiness signal and any unavailable dependency. Distinguish observed facts from assumptions. A server listening on a port does not prove that the required data path works.
+
 Extract required behavior, constraints, deliverables and completion conditions. Assign stable IDs such as R1. Cite the source section for each. Separate explicit requirements, user decisions, assumptions and optional polish. A plan must not quietly invent requirements.
 
 Describe who uses the result and which concrete decision or task it improves. A business-purpose interpretation is a hypothesis until supported by the brief or user; it does not override required behavior. If relevance or selection matters, define useful inclusion and exclusion examples from the supplied domain data. Do not assume partial text matching establishes semantic suitability.
@@ -27,6 +29,8 @@ For each requirement, record observable acceptance checks, a short implementatio
 
 Choose a short implementation order that reaches a working end-to-end path early. For an empty app, include the smallest runnable scaffold as the first step. Choose a stack from constraints and available tools; record the reason instead of scaffolding several alternatives.
 
+If multiple writing sessions are explicitly intended, add a compact coordination section before implementation starts: baseline commit, each writer's owned files or directories, shared API/schema/type contracts, one owner for shared files and dependency changes, server ports and processes, integration order and handoff checks. Prefer boundaries that let each writer finish a coherent slice. Do not parallelize tightly coupled edits merely to keep sessions busy; the combined checkpoint must rerun the core path.
+
 Name the required path that should remain complete if optional work is cut. Distinguish agent sessions used to build the app from any runtime AI integration requested by the app: runtime SDKs and services must be explicitly permitted and available, not inferred from another project's example. Label fixture, fallback and real external results separately. Do not drop a mandatory requirement because an anecdote describes a successful project that omitted it.
 
 Treat MCP as an integration decision, not a default setup step. First test whether supplied files, APIs and terminal tools cover the requirement. If MCP would materially fill a missing capability, record its purpose, outbound data, authentication, configuration change, failure behavior and manual fallback, then confirm it is permitted before connecting. A visible JSON configuration option does not establish permission.
@@ -37,4 +41,4 @@ Finish with a self-check: every required README item has an ID; each ID has a te
 
 ## Keep it useful
 
-Update the SPEC as decisions or evidence change. Record reasons for changed requirements and preserve their source; failing code is not a reason to weaken acceptance. Mark implementation complete separately from verified complete. Keep one clear next action. Planning-only requests stop here; otherwise continue the authorized workflow.
+Update the SPEC as decisions or evidence change. Record reasons for changed requirements and preserve their source; failing code is not a reason to weaken acceptance. For a material AI suggestion, note whether it was adopted, modified, deferred or rejected, the actual reason and any observed evidence. Do not manufacture a disagreement or claim an unrun check. Mark implementation complete separately from verified complete. Keep one clear next action. Planning-only requests stop here; otherwise continue the authorized workflow.

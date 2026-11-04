@@ -22,7 +22,9 @@ Build a small coverage map from required README items and SPEC acceptance IDs to
 - tests that exercise a proxy instead of the user's path, or evidence that does not prove the claimed criterion;
 - UI states or copy that imply saved, published, generated or personalized behavior the code did not complete.
 
-Trace important input-to-output paths through the real functions and data. Treat comments, commit messages, SPEC checkboxes and the author's completion report as claims. Run existing relevant checks when permitted; do not create a different easy test to replace a failing required check. For UI work, read [hha-ui](../hha-ui/SKILL.md). Visual quality needs the rendered surface or allowed screenshots; code-only review must say it did not verify rendering.
+Trace one important request through its real input, server validation, handler, data source and query conditions, processing, response and consumer where those layers exist. Check that the evidence identifies the intended instance and distinguishes real data or services from fixtures and mocks. Treat comments, commit messages, SPEC checkboxes and the author's completion report as claims. Run existing relevant checks when permitted; do not create a different easy test to replace a failing required check. For UI work, read [hha-ui](../hha-ui/SKILL.md). Visual quality needs the rendered surface or allowed screenshots; code-only review must say it did not verify rendering.
+
+For an integrated result, inspect shared contracts and rerun the core path on the combined checkpoint. A writer's isolated PASS or a conflict-free merge does not prove integration. Review invalid input, data changes, restart behavior or concurrent writes only when they are required or plausible risks for this project; report unsupported guarantees instead of demanding unnecessary architecture.
 
 Avoid speculative architecture advice, broad refactors and style nits without user impact. Verify a suspected issue against source or a reproducible run before calling it confirmed. If evidence is unavailable, label it inferred and state the missing check.
 
