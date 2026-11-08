@@ -2,6 +2,8 @@
 
 Lightweight skills for planning, building, and verifying.
 
+**[SK하이닉스 AI 해커톤 2026](https://talent.skhynix.com/hub/en/company/story/237) 본선 진출.** hha는 [hhmode](https://github.com/unhaeos/hhmode)를 제한된 과제 환경에 맞게 간소화한 버전입니다. 크래프톤의 Cofa-Probe 등을 활용한 온라인 예선에서 hha를 사용했습니다.
+
 README를 읽고, 필요한 질문을 함께 정리하고, 체크리스트형 SPEC을 만든 뒤 실제 결과로 검증합니다. 코드가 없는 프로젝트에서도 시작할 수 있습니다. 프로젝트의 AGENTS.md와 자동 인식 스킬로 사용하며 API 키, 플러그인, 전역 설정 변경이 필요하지 않습니다.
 
 ## 바로 시작
